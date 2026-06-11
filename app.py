@@ -24,6 +24,66 @@ from datetime import datetime
 # --------------------------
 st.set_page_config(page_title="Deployment Report Generator", page_icon="📊", layout="wide")
 
+# ---------------------------------------------------------------------------
+# Custom CSS
+# ---------------------------------------------------------------------------
+st.markdown("""
+<style>
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.report-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+    margin-bottom: 10px;
+    animation: slideIn 0.5s ease-out;
+}
+.report-icon {
+    font-size: 3rem;
+    display: inline-block;
+}
+.report-title {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #4472C4, #ED7D31);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+.report-subtitle {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 4px;
+}
+[data-testid="stFileUploader"] {
+    border-radius: 12px;
+}
+.stButton > button {
+    border-radius: 8px;
+}
+div[data-testid="stDownloadButton"] > button {
+    background: linear-gradient(135deg, #4472C4, #1ABC9C);
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# Header
+st.markdown("""
+<div class="report-header">
+    <div class="report-icon">📊</div>
+    <div>
+        <p class="report-title">Deployment Report Generator</p>
+        <p class="report-subtitle">Upload an Excel file to generate a formatted PowerPoint report with status table and chart.</p>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 # Colors matching the screenshot
 HEADER_BLUE = RGBColor(0x44, 0x72, 0xC4)  # Blue Accent 1 (Office 2013-2022)
 CHART_BLUE = RGBColor(0x44, 0x72, 0xC4)   # Blue bars
@@ -240,8 +300,7 @@ def build_ppt(pivot, today_str):
 # --------------------------
 # Streamlit UI
 # --------------------------
-st.title("📊 Deployment Report Generator")
-st.caption("Upload an Excel file to generate a single-slide PowerPoint with status table and chart.")
+# Main content (header already rendered above)
 
 uploaded_file = st.file_uploader("Upload Deployment Excel (.xlsx)", type=["xlsx", "xls"])
 
