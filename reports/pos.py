@@ -12,7 +12,7 @@ def render(report_type="REG Readiness"):
 
     from reports.pos_full import compute_pos_data, build_pos_ppt
 
-    st.title(f"🖥️ POS - {report_type} Report")
+    st.subheader(f"🖥️ POS - {report_type} Report")
     st.caption(f"Upload the POS-{report_type.split()[0]} Excel to generate a 2-slide PPT report.")
 
     uploaded_file = st.file_uploader(f"Upload POS-{report_type.split()[0]} Excel (.xlsx)", type=["xlsx", "xls"], key=f"pos_{report_type}_upload")

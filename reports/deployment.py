@@ -23,7 +23,7 @@ def render():
     # Import the build function from the full file
     from reports.deployment_full import build_ppt, set_category_axis_horizontal, HEADER_BLUE, CHART_COLORS
 
-    st.title("📊 Deployment Report")
+    st.subheader("📊 Deployment Report")
     st.caption("Upload deployment Excel to generate a single-slide PPT with status table and chart.")
 
     uploaded_file = st.file_uploader("Upload Deployment Excel (.xlsx)", type=["xlsx", "xls"], key="deploy_upload")

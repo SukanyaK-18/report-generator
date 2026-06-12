@@ -12,7 +12,7 @@ def render():
 
     from reports.eod_full import compute_eod_data, build_eod_ppt
 
-    st.title("📋 EOD Weekly Report")
+    st.subheader("📋 EOD Weekly Report")
     st.caption("Upload EOD Excel to generate a 2-slide PPT report.")
 
     uploaded_file = st.file_uploader("Upload EOD Excel (.xlsx)", type=["xlsx", "xls"], key="eod_upload")
