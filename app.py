@@ -62,7 +62,7 @@ st.markdown("""
     <div class="app-icon">⚡</div>
     <div>
         <p class="app-title">Report Generator Tool</p>
-        <p class="app-subtitle">Upload Excel → Select Report Type → Generate PPT</p>
+        <p class="app-subtitle">Select Report Type → Upload Excel → Generate PPT</p>
     </div>
 </div>
 """, unsafe_allow_html=True)
