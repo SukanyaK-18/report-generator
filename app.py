@@ -5,7 +5,7 @@ Combines Deployment, EOD, and POS Readiness reports into one tool.
 
 import streamlit as st
 
-st.set_page_config(page_title="Report Generator", page_icon="📊", layout="wide")
+st.set_page_config(page_title="Report Generator Tool", page_icon="⚡", layout="wide")
 
 # Custom CSS
 st.markdown("""
@@ -59,16 +59,16 @@ div[data-testid="stDownloadButton"] > button {
 # Header
 st.markdown("""
 <div class="app-header">
-    <div class="app-icon">📊</div>
+    <div class="app-icon">⚡</div>
     <div>
-        <p class="app-title">Report Generator</p>
+        <p class="app-title">Report Generator Tool</p>
         <p class="app-subtitle">Upload Excel → Select Report Type → Generate PPT</p>
     </div>
 </div>
 """, unsafe_allow_html=True)
 
 # Sidebar navigation
-st.sidebar.title("📊 Report Type")
+st.sidebar.title("⚡ Report Type")
 report_type = st.sidebar.radio(
     "Select",
     ["Deployment", "EOD", "POS - REG Readiness", "POS - SCO Readiness"],
